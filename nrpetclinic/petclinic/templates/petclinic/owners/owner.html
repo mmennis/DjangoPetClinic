@@ -1,0 +1,68 @@
+{% extends 'petclinic/base.html' %}
+
+{% block title %}{{ owner.first_name }}{{ owner.last_name }}{% endblock %}
+
+{% block content %}
+<h2>Owner Information</h2>
+
+<table>
+    <tr>
+        <td>Name</td>
+        <td>{{ owner.first_name }}&nbsp;{{ owner.last_name }}</td>
+    </tr>
+    <tr>
+        <td>Address</td>
+        <td>{{ owner.address }}</td>
+    </tr>
+    <tr>
+        <td>City</td>
+        <td>{{ owner.city }}</td>
+    </tr>
+    <tr>
+        <td>Telephone</td>
+        <td>{{ owner.telephone }}</td>
+    </tr>
+</table>
+
+<h2>Pets and Visits</h2>
+{% for pet in owner.pet_set.all %}
+    <table>
+        <tr valign="top">
+            <td>
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <td>{{ pet.name }}</td>
+                    </tr>
+                    <tr>
+                        <th>Birthdate</th>
+                        <td>{{ pet.birth_date }}</td>
+                    </tr>
+                    <tr>
+                        <th>Type</th>
+                        <td>{{ pet.pet_type.name }}</td>
+                    </tr>
+                </table>
+            </td>
+            <td valign="top">
+                <table>
+                    <tr>
+                        <thead>
+                            <th>Visit Date</th>
+                            <th>Description</th>
+                        </thead>
+                        {% for visit in pet.visit_set.all %}
+                        <tr>
+                            <td>{{ visit.visit_date }}</td>
+                            <td>{{ visit.description }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+{% empty %}
+    <p>There are no pets for this owner.</p>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,14 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title>Django Petclinic | {% block title%}{% endblock %}</title>
+        <link href="{{ STATIC_ROOT }}/static/petclinic.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        {% include 'petclinic/header.html' %}
+        <div id="main">
+        {% block content %}{% endblock %}
+        </div>
+        {% include 'petclinic/footer.html' %}
+    </body>
+</html>
