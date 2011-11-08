@@ -17,5 +17,7 @@ urlpatterns = patterns('',
     
     url(r'^petclinic/$', 'petclinic.views.index'),
     url(r'^petclinic/owners/$', 'petclinic.views.all_owners'),
-    url(r'^petclinic/owners/(?P<owner_id>\d+)$', 'petclinic.views.owners.owner')
+    url(r'^petclinic/owners/(?P<owner_id>\d+)$', 'petclinic.views.owners.owner'),
+    
+    url(r'petclinic/vets/$', 'petclinic.views.all_vets')
 )

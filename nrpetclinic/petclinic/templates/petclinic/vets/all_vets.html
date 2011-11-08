@@ -1,0 +1,25 @@
+{% extends 'petclinic/base.html' %}
+
+{% block title %}All Vets{% endblock %}
+
+{% block content %}
+<h1>Listing Vets</h1>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Specialties</th>
+    </tr>
+    {% for vet in all_vets_list %}
+        <tr>
+            <td>{{ vet.first_name }}&nbsp;{{ vet.last_name }}</td>
+            <td>
+                {{ vet.specialties.all|join:", " }}
+            </td>
+        </tr>
+    {% empty %}
+        <p>There are no vets to display</p>
+    {% endfor %}
+</table>
+
+{% endblock %}
