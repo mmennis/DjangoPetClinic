@@ -8,7 +8,7 @@ body,div,td {
 
 body {
 	background-color: #fff;
-	background-image: url(../images/banner-graphic.png);
+	background-image: url(/static/banner-graphic.png);
 	background-position: top center;
 	background-repeat: no-repeat;
 	text-align: center;
@@ -102,7 +102,7 @@ a:visited {
 }
 
 ul {
-	list-style: disc url(../images/bullet-arrow.png);
+	list-style: disc url(/static/bullet-arrow.png);
 }
 
 li {
@@ -111,7 +111,7 @@ li {
 }
 
 li ul {
-	list-style: square url(images/sub-bullet.gif);
+	list-style: square url(/static/sub-bullet.gif);
 }
 
 li ul li ul {
@@ -211,7 +211,7 @@ fieldset th {
 }
 
 .submit input {
-	background:url(../images/submit-bg.png) repeat-x;
+	background:url(/static/submit-bg.png) repeat-x;
     border: 2px outset #d7b9c9;
 	color:#383838;
 	padding:2px 10px;
