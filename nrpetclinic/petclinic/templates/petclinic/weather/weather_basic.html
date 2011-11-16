@@ -1,0 +1,38 @@
+{% extends 'petclinic/base.html' %}
+
+{% block title %}Hello{% endblock %}
+
+{% block content %}
+
+<table>
+    <tr>
+        <th>City</th>
+		<th></th>
+        <th>link</th>
+    </tr>
+	{% for f in forecasts %}
+	<tr>
+	    <td valign="top">{{ f.location.city }}</td>
+	    <td>
+	    	<table>
+	    		<tr>
+	    			<td valign="top">Conditions</td>
+	    			<td colspan="2">
+	    				{{ f.condition.text }}<br/>
+	    				Temp: {{ f.condition.temp }} {{ f.units.temperature }}<br/>
+	    				Wind: {{ f.wind.speed }} {{ f.units.speed }}
+	    			</td>
+	    		</tr>
+	    		<tr>
+	    			<td>Sunrise/Sunset</td>
+	    			<td>{{ f.astronomy.sunrise }}</td>
+	    			<td>{{ f.astronomy.sunset }}</td>
+	    		</tr>
+	    	</table>
+	    </td>
+	    <td valign="top"><a href="{{ f.link }}">Full Weather</a></td>
+	</tr>
+	{% endfor %}
+</table>
+
+{% endblock %}
