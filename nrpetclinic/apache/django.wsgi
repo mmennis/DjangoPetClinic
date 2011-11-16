@@ -7,9 +7,12 @@ app_home = os.path.realpath(os.path.join(os.path.dirname(__file__), ".."))
 
 newrelic_ini_file = os.path.realpath(os.path.join(app_home, "newrelic.ini"))
 
-print project_home
-print app_home
-print newrelic_ini_file
+#print project_home
+#print app_home
+#print newrelic_ini_file
+
+import newrelic.agent
+newrelic.agent.initialize(newrelic_ini_file)
 
 sys.path.append(project_home)
 sys.path.append(app_home)       # Per the wsgi site instructions
