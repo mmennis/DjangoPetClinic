@@ -24,4 +24,7 @@ urlpatterns = patterns('',
     url(r'petclinic/weather/', 'petclinic.views.weather'),
     url(r'petclinic/rss_test/', 'petclinic.views.rss_test'),
     
+    url(r'petclinic/error_page/', 'petclinic.views.exception_page'),
+    url(r'petclinic/divide_by_zero/', 'petclinic.views.divide_by_zero'),
+    
 )
