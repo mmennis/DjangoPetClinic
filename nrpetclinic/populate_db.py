@@ -44,9 +44,13 @@ petNamesFile.close()
 petTypes = PetType.objects.all()
 all_specialties = Specialty.objects.all()
 
+lastNames = ["Smith", "Jones", "Lee", "Williams", "Johnson"]
+for i in range(0, 25):
+    lastNames.append(f.last_name())
+
 for i in range(0,OWNER_COUNT):
     o = Owner(first_name=f.first_name(),
-              last_name=f.last_name(),
+              last_name=random.choice(lastNames),
               address=f.street_address(),
               city=f.city(),
               telephone="1-123-555-1212")
