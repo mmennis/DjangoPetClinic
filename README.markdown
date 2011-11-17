@@ -60,3 +60,7 @@ The changes should look a little like this:
     </Directory>
 
 Where $$checkout-dir$$ is replaced with teh directory you checked the code out to and ran virtualenv
+
+Notes
+------------------------------------------------
+ * feedparser is used to look at rss feeds.  installing with pip requires your python to support "bz2" 
