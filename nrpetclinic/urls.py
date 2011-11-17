@@ -21,6 +21,7 @@ urlpatterns = patterns('',
     url(r'^petclinic/owners/(?P<owner_id>\d+)$', 'petclinic.views.owners.owner'),
     
     url(r'petclinic/vets/$', 'petclinic.views.all_vets'),
-    url(r'petclinic/weather/', 'petclinic.views.weather')
+    url(r'petclinic/weather/', 'petclinic.views.weather'),
+    url(r'petclinic/rss_test/', 'petclinic.views.rss_test'),
     
 )

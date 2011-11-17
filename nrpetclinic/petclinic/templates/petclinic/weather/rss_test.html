@@ -1,0 +1,21 @@
+{% extends 'petclinic/base.html' %}
+
+{% block title %}RSS feed Test Page{% endblock %}
+
+{% block content %}
+<table>
+	<tr>
+		<th>Title</th>
+		<th>Link</th>
+		<th>Summary</th>
+	</tr>
+	{% for entry in feed %}
+	<tr>
+		<td>{{ entry.title }} </td>
+		<td><a href="{{ entry.link }}" >Full entry</a></td>
+		<td>{{ entry.summary|safe }}</td>
+	</tr>
+	{% endfor %}
+</table>
+
+{% endblock %}

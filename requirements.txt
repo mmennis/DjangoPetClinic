@@ -3,3 +3,4 @@ faker>=0.0
 MySQL-python>=0.0
 newrelic>=0.0
 pywapi
+feedparser
