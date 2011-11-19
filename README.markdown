@@ -64,3 +64,5 @@ Where $$checkout-dir$$ is replaced with teh directory you checked the code out t
 Notes
 ------------------------------------------------
  * feedparser is used to look at rss feeds.  installing with pip requires your python to support "bz2" 
+ * For postgresql need to use "--settings=nrpetclinic.settings_postgresql" switch on manage.db and modify the django.wsgi file to use the alternate settings_pgsql production.
+ * For setting up postgres you'll need to create a database and user and edit the settings_postgresql.py file.

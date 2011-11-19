@@ -4,6 +4,8 @@ import sys, os
 currPath = os.path.realpath(os.path.dirname(__file__))
 sys.path.append(currPath)
 os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
+# Use this for postgres ...
+#os.environ['DJANGO_SETTINGS_MODULE'] = 'settings_postgresql'
 
 dbDataPath = os.path.join(currPath, 'petclinic', 'db_data')
 
